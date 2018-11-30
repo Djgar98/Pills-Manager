@@ -10,9 +10,11 @@
     <include layout="@layout/action_bar_toolbar"> </include>
 
     <FrameLayout
+        android:id="@+id/container_principal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/navigation"
+       
         />
 
     <android.support.design.widget.BottomNavigationView
