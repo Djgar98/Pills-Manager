@@ -2,9 +2,9 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-<<<<<<< HEAD
     <color name="colorAccent">#FF5722</color>
-=======
-    <color name="colorAccent">#ff5722</color>
->>>>>>> origin/Leonardo_Juarez
+
+
+
+
 </resources>

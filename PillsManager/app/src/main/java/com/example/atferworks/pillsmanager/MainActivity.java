@@ -23,43 +23,47 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
+
+                if (item.getItemId() == R.id.navigation_home ) {
                     Fragment fragmentGeneric;
                     fragmentGeneric = new HomeFragment();
                     FragmentTransaction fragmnetTransicion_1 = getSupportFragmentManager().beginTransaction();
                     fragmnetTransicion_1.replace(R.id.container_principal,fragmentGeneric);
                     fragmnetTransicion_1.commit();
                     return true;
-                case R.id.navigation_medicine:
+                }
+                if (item.getItemId() == R.id.navigation_medicine ) {
                     Fragment fragmentGeneric1;
                     fragmentGeneric1 = new MedicineFragment();
                     FragmentTransaction fragmnetTransicion_2 = getSupportFragmentManager().beginTransaction();
                     fragmnetTransicion_2.replace(R.id.container_principal,fragmentGeneric1);
                     fragmnetTransicion_2.commit();
                     return true;
-                case R.id.navigation_notifications:
+                }
+                if (item.getItemId() == R.id.navigation_search ) {
                     Fragment fragmentGeneric2;
                     fragmentGeneric2 = new SearchFragment();
                     FragmentTransaction fragmnetTransicion_3 = getSupportFragmentManager().beginTransaction();
                     fragmnetTransicion_3.replace(R.id.container_principal,fragmentGeneric2);
                     fragmnetTransicion_3.commit();
                     return true;
-                case R.id.navigation_search:
+                }
+                if (item.getItemId() == R.id.navigation_store) {
                     Fragment fragmentGeneric3;
                     fragmentGeneric3 = new DrugStoreFragment();
                     FragmentTransaction fragmnetTransicion_4 = getSupportFragmentManager().beginTransaction();
                     fragmnetTransicion_4.replace(R.id.container_principal,fragmentGeneric3);
                     fragmnetTransicion_4.commit();
                     return true;
-                case R.id.navigation_user:
+                }
+                    if (item.getItemId() == R.id.navigation_user ) {
                     Fragment fragmentGeneric4;
                     fragmentGeneric4 = new UserFragment();
                     FragmentTransaction fragmnetTransicion_5 = getSupportFragmentManager().beginTransaction();
                     fragmnetTransicion_5.replace(R.id.container_principal,fragmentGeneric4);
                     fragmnetTransicion_5.commit();
                     return true;
-            }
+                }
             return false;
         }
     };
@@ -69,8 +73,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         showToolbar(getResources().getString(R.string.title_home),false);
-       // mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = findViewById(R.id.navigation);
+        if (navigation !=  null)
+        {
+            Fragment fragmentGeneric;
+            fragmentGeneric = new HomeFragment();
+            FragmentTransaction fragmnetTransicion_1 = getSupportFragmentManager().beginTransaction();
+            fragmnetTransicion_1.replace(R.id.container_principal,fragmentGeneric);
+            fragmnetTransicion_1.commit();
+        }
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
