@@ -1,18 +1,18 @@
 package com.example.atferworks.pillsmanager.Modelo;
 
 public class INTAKE {
-    private String FK_IDUSER;
-    private String FK_IDDRUG;
+    private int FK_IDUSER;
+    private int FK_IDDRUG;
     private String STARTDATE;
     private String FINISHDATE;
     private String DATE;
     private String PERIOD;
-    private String STATUS;
-    private String TIMELIMIT;
+    private int STATUS;
+    private int TIMELIMIT;
 
     public INTAKE(){}
 
-    public INTAKE(String FK_IDUSER, String FK_IDDRUG, String STARTDATE, String FINISHDATE, String DATE, String PERIOD, String STATUS, String TIMELIMIT) {
+    public INTAKE(int FK_IDUSER, int FK_IDDRUG, String STARTDATE, String FINISHDATE, String DATE, String PERIOD, int STATUS, int TIMELIMIT) {
         this.FK_IDUSER = FK_IDUSER;
         this.FK_IDDRUG = FK_IDDRUG;
         this.STARTDATE = STARTDATE;
@@ -23,11 +23,11 @@ public class INTAKE {
         this.TIMELIMIT = TIMELIMIT;
     }
 
-    public String getFK_IDUSER() {
+    public int getFK_IDUSER() {
         return FK_IDUSER;
     }
 
-    public String getFK_IDDRUG() {
+    public int getFK_IDDRUG() {
         return FK_IDDRUG;
     }
 
@@ -47,11 +47,11 @@ public class INTAKE {
         return PERIOD;
     }
 
-    public String getSTATUS() {
+    public int getSTATUS() {
         return STATUS;
     }
 
-    public String getTIMELIMIT() {
+    public int getTIMELIMIT() {
         return TIMELIMIT;
     }
 }
