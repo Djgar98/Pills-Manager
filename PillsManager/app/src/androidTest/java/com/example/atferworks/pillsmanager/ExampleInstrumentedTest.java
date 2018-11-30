@@ -1,26 +1,50 @@
 package com.example.atferworks.pillsmanager;
 
-import android.content.Context;
-import android.support.test.InstrumentationRegistry;
-import android.support.test.runner.AndroidJUnit4;
-
-import org.junit.Test;
-import org.junit.runner.RunWith;
-
-import static org.junit.Assert.*;
-
 /**
  * Instrumented test, which will execute on an Android device.
  *
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
-@RunWith(AndroidJUnit4.class)
+//@RunWith(AndroidJUnit4.class)
 public class ExampleInstrumentedTest {
-    @Test
-    public void useAppContext() {
-        // Context of the app under test.
-        Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.atferworks.pillsmanager", appContext.getPackageName());
+
+    public interface Logger {
+        public void log (String message);
+    }
+
+    public interface HtmlValidator {
+        boolean isValid(String html);
+    }
+
+    public class BlogService {
+        Logger logger;
+        HtmlValidator htmlValidator;
+
+        public BlogService(Logger logger, HtmlValidator htmlValidator){
+            this.logger = logger;
+            this.htmlValidator = htmlValidator;
+        }
+
+        private void Log(String message){
+            if (logger != null)
+                logger.log(message);
+        }
+
+        public boolean publishPost(String html){
+            if (htmlValidator.isValid(html))
+            {
+                Log("Usuario Aceptado");
+
+                return true;
+            }
+            else
+            {
+                Log("Este Usuario no existe");
+
+                throw new IllegalArgumentException("Error en la autenticacion");
+            }
+        }
     }
 }
+
